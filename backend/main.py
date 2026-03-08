@@ -58,9 +58,9 @@ MODEL_DIR = Path(__file__).parent / "models" / "weights"
 MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
 # KOA folder with trained cascade models
-SAVED_MODELS_DIR = Path("c:/case study 2/KOA/saved_models")
-if not SAVED_MODELS_DIR.exists():
-    SAVED_MODELS_DIR = Path("c:\\case study 2\\KOA\\saved_models")
+# In Docker the SAVED_MODELS_DIR env var is set to /saved_models (mounted volume)
+_default_saved_models = Path("c:/case study 2/KOA/saved_models")
+SAVED_MODELS_DIR = Path(os.environ.get("SAVED_MODELS_DIR", str(_default_saved_models)))
 
 SCREENING_MODEL_PATH = SAVED_MODELS_DIR / "ConvNeXt-L_Screening_seed42.pth"
 SEVERE_MODEL_PATH = SAVED_MODELS_DIR / "ConvNeXt-L_Severe_seed42.pth"
@@ -81,7 +81,7 @@ print("[BACKEND] Loading clinical agent...")
 agent = ClinicalAgent()
 
 print("[BACKEND] Initializing dataset manager...")
-custom_kaggle_creds = Path("c:/case study 2/kaggle.json")
+custom_kaggle_creds = Path(os.environ.get("KAGGLE_CONFIG_PATH", "c:/case study 2/Secrets/kaggle.json"))
 data_manager.setup_credentials(custom_kaggle_creds)
 
 print("[BACKEND] ✓ System initialized")

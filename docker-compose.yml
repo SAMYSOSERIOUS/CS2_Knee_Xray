@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./KOA/saved_models:/saved_models:ro
+      - ./Secrets/kaggle.json:/run/secrets/kaggle.json:ro
+    environment:
+      - SAVED_MODELS_DIR=/saved_models
+      - KAGGLE_CONFIG_PATH=/run/secrets/kaggle.json
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      - BACKEND_HOST=backend
