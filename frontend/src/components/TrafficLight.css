@@ -1,0 +1,86 @@
+.traffic-light {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 3px solid;
+}
+
+.traffic-light.green {
+  border-color: #2ecc71;
+  background: #f0fdf4;
+}
+
+.traffic-light.yellow {
+  border-color: #f39c12;
+  background: #fffbf0;
+}
+
+.traffic-light.red {
+  border-color: #e74c3c;
+  background: #fef5f5;
+}
+
+.light-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.light-emoji {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.light-label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.traffic-light.green .light-label {
+  color: #1b6b3a;
+}
+
+.traffic-light.yellow .light-label {
+  color: #b8860b;
+}
+
+.traffic-light.red .light-label {
+  color: #8b0000;
+}
+
+.diagnosis-box {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.traffic-light.green .diagnosis-box {
+  border-color: #2ecc71;
+}
+
+.traffic-light.yellow .diagnosis-box {
+  border-color: #f39c12;
+}
+
+.traffic-light.red .diagnosis-box {
+  border-color: #e74c3c;
+}
+
+.diagnosis-text {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}

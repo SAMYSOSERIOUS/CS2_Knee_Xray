@@ -1,0 +1,294 @@
+/* ResultsDisplay — Clinical Dashboard */
+
+.results-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  animation: fadeIn 0.35s ease;
+}
+
+/* ─ Status Banner */
+.results-banner {
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  border: 1px solid;
+}
+
+.results-banner.green {
+  background: var(--green-50);
+  border-color: var(--green-100);
+}
+.results-banner.yellow {
+  background: var(--amber-50);
+  border-color: var(--amber-100);
+}
+.results-banner.red {
+  background: var(--red-50);
+  border-color: var(--red-100);
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.traffic-dot {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.traffic-dot.green  { background: var(--green-500); }
+.traffic-dot.yellow { background: var(--amber-500); }
+.traffic-dot.red    { background: var(--red-500);   }
+
+.banner-info h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.banner-info p {
+  font-size: 0.875rem;
+  color: var(--slate-500);
+}
+
+.confidence-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.confidence-chip .conf-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--slate-400);
+}
+
+.confidence-chip .conf-value {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.confidence-chip.green .conf-value  { color: var(--green-600);  }
+.confidence-chip.yellow .conf-value { color: var(--amber-600);  }
+.confidence-chip.red .conf-value    { color: var(--red-600);    }
+
+/* ─ Two-column grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.results-full {
+  grid-column: 1 / -1;
+}
+
+/* ─ Section Card */
+.section-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.section-head {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-head h3 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--slate-400);
+}
+
+.section-body {
+  padding: var(--spacing-lg);
+}
+
+/* ─ Probability bars */
+.prob-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prob-row {
+  display: grid;
+  grid-template-columns: 64px 1fr 48px;
+  align-items: center;
+  gap: 12px;
+}
+
+.prob-row .kl-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--slate-600);
+}
+
+.prob-track {
+  background: var(--slate-100);
+  border-radius: 4px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.prob-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.prob-fill.top    { background: var(--blue-600); }
+.prob-fill.normal { background: var(--slate-300); }
+
+.prob-row .pct {
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--slate-500);
+  text-align: right;
+}
+
+.prob-row .pct.top { color: var(--blue-600); }
+
+/* ─ Confidence gauge (main) */
+.conf-gauge-wrap {
+  margin-top: var(--spacing-sm);
+}
+
+.conf-track {
+  background: var(--slate-100);
+  border-radius: 8px;
+  height: 16px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-sm);
+}
+
+.conf-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.conf-fill.green  { background: linear-gradient(90deg, var(--green-500), var(--green-600)); }
+.conf-fill.yellow { background: linear-gradient(90deg, var(--amber-500), var(--amber-600)); }
+.conf-fill.red    { background: linear-gradient(90deg, var(--red-500),   var(--red-600));   }
+
+/* ─ Recommendation */
+.recommendation-card {
+  display: flex;
+  gap: var(--spacing-md);
+  background: var(--slate-50);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.rec-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.rec-text {
+  font-size: 0.875rem;
+  color: var(--slate-700);
+  line-height: 1.6;
+}
+
+.rec-text strong {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--slate-400);
+  margin-bottom: 3px;
+}
+
+/* ─ Actions */
+.results-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-md);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.18s ease;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 1px 4px rgba(37,99,235,0.3);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  box-shadow: 0 4px 12px rgba(37,99,235,0.35);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--slate-600);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--slate-50);
+  color: var(--slate-800);
+  border-color: var(--slate-300);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .results-grid { grid-template-columns: 1fr; }
+  .results-actions { flex-direction: column; }
+  .btn { justify-content: center; }
+  .banner-right { display: none; }
+}

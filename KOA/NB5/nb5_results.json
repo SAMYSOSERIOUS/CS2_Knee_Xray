@@ -1,0 +1,12 @@
+{
+  "ece": {
+    "ConvNeXt-L": 0.038324678397696973,
+    "DenseNet201": 0.026424278545638773,
+    "Swin-T": 0.04701852256765111
+  },
+  "gradcam_architectures": [
+    "ConvNeXt-L",
+    "DenseNet201",
+    "Swin-T"
+  ]
+}

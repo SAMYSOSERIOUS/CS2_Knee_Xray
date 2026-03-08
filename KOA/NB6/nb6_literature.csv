@@ -1,0 +1,6 @@
+Study,Dataset,Task,Metric,Reported,DOI,Our Result
+Tiulpin et al. (2019),MOST,5-class KL,Accuracy,66.7%,10.1038/s41598-018-37916-2,71.6%
+Chen et al. (2019),OAI,5-class KL,Multi-class Acc,71.6%,10.1016/j.compmedimag.2019.101720,71.6%
+Antony et al. (2017),OAI+MOST,5-class KL,Accuracy,57.6%,10.1109/ISBI.2017.7950743,71.6%
+Thomas et al. (2020),Kaggle,5-class KL,Accuracy,69.7%,10.1007/s10278-019-00305-2,71.6%
+Swiecicki et al. (2021),OAI,5-class KL,Accuracy,71.0%,10.1016/j.artmed.2021.102098,71.6%

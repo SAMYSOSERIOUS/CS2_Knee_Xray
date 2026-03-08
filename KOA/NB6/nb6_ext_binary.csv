@@ -1,0 +1,16 @@
+Task,Architecture,Ext Acc,Ext AUC
+Screening,ConvNeXt-L,0.784±0.014,0.893±0.002
+Screening,EfficientNet-B0,0.688±0.037,0.699±0.062
+Screening,DenseNet201,0.721±0.010,0.827±0.007
+Screening,Xception,0.741±0.014,0.843±0.013
+Screening,Swin-T,0.752±0.021,0.876±0.003
+OA,ConvNeXt-L,0.585±0.007,0.865±0.017
+OA,EfficientNet-B0,0.507±0.013,0.694±0.031
+OA,DenseNet201,0.454±0.011,0.807±0.033
+OA,Xception,0.482±0.031,0.814±0.024
+OA,Swin-T,0.524±0.019,0.842±0.029
+Severe,ConvNeXt-L,0.767±0.023,0.941±0.002
+Severe,EfficientNet-B0,0.500±0.044,0.748±0.056
+Severe,DenseNet201,0.689±0.032,0.887±0.025
+Severe,Xception,0.677±0.097,0.899±0.007
+Severe,Swin-T,0.701±0.057,0.944±0.006

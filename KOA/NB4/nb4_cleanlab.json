@@ -1,0 +1,36 @@
+{
+  "total_flagged": 842,
+  "total_images": 5778,
+  "flagged_pct": 14.57251644167532,
+  "noise_by_grade": {
+    "0": {
+      "flagged": 330,
+      "total": 2286,
+      "pct": 14.435695538057743
+    },
+    "1": {
+      "flagged": 193,
+      "total": 1046,
+      "pct": 18.451242829827915
+    },
+    "2": {
+      "flagged": 281,
+      "total": 1516,
+      "pct": 18.535620052770447
+    },
+    "3": {
+      "flagged": 38,
+      "total": 757,
+      "pct": 5.019815059445178
+    },
+    "4": {
+      "flagged": 0,
+      "total": 173,
+      "pct": 0.0
+    }
+  },
+  "clean_mean_confidence": 0.76416015625,
+  "flagged_mean_confidence": 0.60107421875,
+  "kl1_noise_rate": 0.18451242829827916,
+  "theoretical_max_f1": 0.6309751434034416
+}

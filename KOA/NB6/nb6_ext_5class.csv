@@ -1,0 +1,11 @@
+Architecture,Loss,External Acc
+ConvNeXt-L,CE,0.326±0.009
+ConvNeXt-L,CORAL,0.247±0.020
+EfficientNet-B0,CE,0.254±0.019
+EfficientNet-B0,CORAL,0.195±0.005
+DenseNet201,CE,0.264±0.016
+DenseNet201,CORAL,0.212±0.021
+Xception,CE,0.228±0.001
+Xception,CORAL,0.213±0.018
+Swin-T,CE,0.270±0.012
+Swin-T,CORAL,0.213±0.005

@@ -1,0 +1,20 @@
+{
+  "total_images": 9786,
+  "splits": {
+    "train": 5778,
+    "test": 1656,
+    "auto_test": 1526,
+    "val": 826
+  },
+  "class_counts": {
+    "0": 3857,
+    "1": 1770,
+    "2": 2578,
+    "3": 1286,
+    "4": 295
+  },
+  "kaggle_pixel_mean": 155.89167346938774,
+  "mendeley_pixel_mean": 122.82078720180584,
+  "pixel_gap": 33.0708862675819,
+  "interrater_kappa": 1.0
+}

@@ -1,0 +1,31 @@
+{
+  "cascade_kaggle_acc": 0.7216183574879227,
+  "cascade_kaggle_f1": 0.7085151206734318,
+  "cascade_kaggle_qwk": 0.8380801204424952,
+  "cascade_external_acc": 0.4527272727272727,
+  "cascade_external_f1": 0.39742092202047324,
+  "cascade_external_qwk": 0.569072443939952,
+  "gen_gap_pp": 26.889108476064997,
+  "best_5class_acc": 0.7155797101449275,
+  "cascade_improvement_pp": 0.6038647342995196,
+  "tuned_threshold": 0.1,
+  "tuned_acc": 0.6358695652173914,
+  "categories": [
+    "Normal (KL-0)",
+    "Early OA (KL-1)",
+    "Moderate OA (KL-2)",
+    "Severe OA (KL-3/4)"
+  ],
+  "architecture": "ConvNeXt-L",
+  "stages": {
+    "Screening": {
+      "task": "KL>=1"
+    },
+    "OA": {
+      "task": "KL>=2"
+    },
+    "Severe": {
+      "task": "KL>=3"
+    }
+  }
+}
